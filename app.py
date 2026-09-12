@@ -13,6 +13,11 @@ from pathlib import Path
 from src.style import style
 ruta_descargas = Path.home() 
 
+def fecha_actual():
+    date_time = datetime.now()
+    fecha_formateada = date_time.strftime("%d-%m-%Y")
+    return fecha_formateada
+
 class OrganizadorDocumentos(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -22,8 +27,6 @@ class OrganizadorDocumentos(QMainWindow):
         # Estilo visual moderno (Dark mode elegante)
         self.setStyleSheet(style)
 
-
-    def InitUI(self):
         # Widget central y Layout principal
         widget_central = QWidget()
         self.setCentralWidget(widget_central)
@@ -31,7 +34,6 @@ class OrganizadorDocumentos(QMainWindow):
         layout.setContentsMargins(20, 20, 20, 20)
         layout.setSpacing(10)
 
-    def setup_ui(self):
         # 1. Zona de selección de carpeta
         layout_superior = QHBoxLayout()
         self.lbl_carpeta = QLabel("Ninguna carpeta seleccionada")
@@ -42,14 +44,11 @@ class OrganizadorDocumentos(QMainWindow):
         layout_superior.addWidget(self.lbl_carpeta, stretch=1)
         layout_superior.addWidget(btn_seleccionar)
         layout.addLayout(layout_superior)
-    
-    def info_tiket(self):
+
         # Etiqueta informativa
         info_label = QLabel("Haz clic y arrastra los elementos para cambiar el orden:")
         info_label.setFont(QFont("Arial", 10, QFont.Weight.Bold))
         layout.addWidget(info_label)
-
-    def setup_ui(self):
 
         # 2. Lista interactiva (Soporta arrastrar y soltar interno)
         self.lista_archivos = QListWidget()
@@ -61,8 +60,7 @@ class OrganizadorDocumentos(QMainWindow):
         self.btn_procesar = QPushButton("Procesar Documentos en este Orden")
         self.btn_procesar.clicked.connect(self.procesar_orden)
         layout.addWidget(self.btn_procesar)
-
-    def name_doc(self):        
+        
         # 4. Barra para agregar el nombre para el documento final (opcional)
         info_label = QLabel("nombre del documento final (opcional):")
         layout.addWidget(info_label)
@@ -70,7 +68,6 @@ class OrganizadorDocumentos(QMainWindow):
         self.input_nombre_doc = QLineEdit(f"Factura_{fecha_actual()}.docx")
         layout.addWidget(self.input_nombre_doc)
 
-    def consola_output(self):
         # 5.Ventana de consola para mostrar el orden final de los documentos
         self.consola = QLabel()
         self.consola.setText("Consola de salida:")
