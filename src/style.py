@@ -1,5 +1,5 @@
 style = """
-            QMainWindow {
+            QWidget {
                 background-color: #1e1e2e;
             }
             QLabel {

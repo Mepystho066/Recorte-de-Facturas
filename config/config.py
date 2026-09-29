@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def fecha_actual():
     date_time = datetime.now()
     fecha_formateada = date_time.strftime("%d-%m-%Y")
