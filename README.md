@@ -1,5 +1,5 @@
 # App recorte de facturas
-Esta es una aplicación diseñada para crear un recorte de facturas especialmente creada para la organización Coreasares.
+Esta es una aplicación diseñada para crear un recorte de facturas especialmente creada para la organización Coraseares.
 
 ## Ejecución y Uso
 Se este en la misma carpeta donde estan los archivos.
